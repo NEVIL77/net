@@ -1,10 +1,10 @@
-
-import './App.css';
+import React from 'react';
+import Body from './components/Body';
 
 function App() {
   return (
-    <div className='text-2xl'>
-      <h1>hello there</h1>
+    <div >
+      < Body />
     </div>
   );
 }
