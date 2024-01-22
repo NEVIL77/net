@@ -1,7 +1,9 @@
-import React, { useRef, useState } from 'react'
-import Header from "./Header"
-import { NetBackGround } from '../utilit/photos';
-import Validation from '../utilit/Validation';
+import   React, { useRef, useState }             from 'react'
+import   Header                                  from "./Header"
+import { NetBackGround }                       from '../utilit/photos';
+import   Validation                              from '../utilit/Validation';
+import { createUserWithEmailAndPassword ,signInWithEmailAndPassword} from "firebase/auth";
+import { auth } from '../utilit/firebase';
 
 const Login = () => {
 
@@ -15,6 +17,37 @@ const Login = () => {
     
     const message = Validation(email.current.value, password.current.value )
     setErrorMessage(message)
+
+    // if error
+    if(errorMessage != null) return ;
+
+    // not an error
+    if(!isSignInForm){
+      // Sign Up
+      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+        .then((userCredential) => {
+                const user = userCredential.user;
+                console.log( user )
+              })
+        .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log( errorCode + "-" + errorMessage)
+              });
+    }
+    else{
+      // Sign In
+      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+          .then((userCredential) => { 
+                  const user = userCredential.user;
+                  console.log(user)
+                })
+          .catch((error) => {
+                  const errorCode = error.code;
+                  const errorMessage = error.message;
+                  console.log( errorCode+ "-" +errorMessage ) 
+          });
+    }
   }
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm)
@@ -44,7 +77,7 @@ const Login = () => {
           <p> {errorMessage} </p>
 
           <button 
-            onClick={handleButtonClick}
+              onClick={handleButtonClick}
             className='bg-red-700 p-4 my-4 w-full rounded-xl'>
               { isSignInForm ? "Sign In" : "Sign Up"}
           </button>
