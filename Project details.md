@@ -10,4 +10,6 @@
 ### Deploying app for Production
 ### Authentication and exporting auth to central place 
     how to setup Authentication->firebase doc ->Doc-> Authentication ->password Authentication 
-    
+### Sign in and Sing up setUp 22/01-1
+### creating store ( Redux Store ) 23/01-1
+        - userSlice,appStore,
