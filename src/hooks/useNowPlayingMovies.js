@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { API_OPTIONS } from "../utilit/constants"
 
 const useNowPlayingMovies = () => {
+    
     const dispatch = useDispatch() ;
 
     useEffect(()=>{
