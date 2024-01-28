@@ -39,10 +39,10 @@
 ## adding movie data to the store (movieStore) 24/01-2
 
 
-making video tittle and passing the data to it  
-making videobackground
-want to get trailer of the movie how ?
-storing the trailer of the movies to redux Store 
+### making video tittle and passing the data to it  
+### making videobackground
+### want to get trailer of the movie how ?
+### storing the trailer of the movies to redux Store 
 
 problem : i want only trailer and i hav list of objects .how do i get the movie object 
 Solution: const trailer = json.result.filter ( movie => movie.type == "Trailer" )
@@ -52,3 +52,5 @@ Solution: const trailer = json.result.filter ( movie => movie.type == "Trailer" 
 redux is Storing 
 1.userData 
 2.movieList 
+3.storing the trailer deatils to the store Slice 
+

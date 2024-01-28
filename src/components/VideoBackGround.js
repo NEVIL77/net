@@ -1,34 +1,18 @@
-import React, { useEffect } from 'react'
-import { API_OPTIONS } from '../utilit/constants';
-import { useDispatch, useSelector } from 'react-redux';
-import { addTrailerVideo } from '../utilit/moviesSlice';
+import React from 'react'
+import useMovieTrailer from '../hooks/useMovieTrailer';
+import { useSelector } from "react-redux";
+
 
 const VideoBackGround = ( { movieId } ) => {
-  // hokks
+
   const trailerVideo = useSelector( store => store.movies?.trailerVideo )
-  const dispatch = useDispatch() ;
-
-  // functions
-  const getMovieVideos = async () => {
-
-    const data = await fetch('https://api.themoviedb.org/3/movie/572802/videos?language=en-US', API_OPTIONS)
-    const json = await data.json()
-
-    const filteredData = json.results.filter( video => video.type === "Trailer" )
-    const trailer = filteredData.length ? filteredData[0] : json.results[0] ;
-    console.log(trailer)
-    if( !trailer ) return 
-
-    dispatch( addTrailerVideo( trailer ) ) ;
-  } 
-  useEffect( () => {
-    getMovieVideos();
-  },[])
+  useMovieTrailer( movieId ) ;
 
   return (
     <div>
       <iframe  
-              src={"https://www.youtube.com/embed/UGc5Tzz19UY?si=" + trailerVideo?.key} 
+              className='w-screen aspect-video'
+              src={"https://www.youtube.com/embed/UGc5Tzz19UY?si=" + trailerVideo?.key + "&autoplay=1&mute=1" } 
               title="YouTube video player" 
                 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
