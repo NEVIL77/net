@@ -47,10 +47,13 @@
 problem : i want only trailer and i hav list of objects .how do i get the movie object 
 Solution: const trailer = json.result.filter ( movie => movie.type == "Trailer" )
 
-
-
 redux is Storing 
 1.userData 
 2.movieList 
 3.storing the trailer deatils to the store Slice 
+
+### making videoTittle
+### making videoBackGround
+### playing YT trailer movie automatically
+### tailwind adjestment
 
