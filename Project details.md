@@ -60,3 +60,6 @@ redux is Storing
 ### make custom hook to fetch different type of movies from TMDB 
 ### made dynamic component name as SecondaryContainer, MovieList, MovieCard to render the movie in row 
 ### adjest this row as netflix have in there UI 
+
+### Inteigrating ChatGPT
+### Making Responsive App
