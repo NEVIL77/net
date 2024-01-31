@@ -1,18 +1,18 @@
-import React, { useEffect }                from 'react' ;
-import { LogoImage }        from '../utilit/photos';
-import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import { useNavigate, useNavigation }      from 'react-router';
-import { UseSelector, useDispatch, useSelector }      from 'react-redux';
-import { addUser, removeUser } from '../utilit/userSlice';
+import React, { useEffect }                           from 'react' ;
+import { LogoImage }                                  from '../utilit/photos';
+import { getAuth, onAuthStateChanged, signOut }       from "firebase/auth";
+import { useNavigate}                                 from 'react-router';
+import { useDispatch, useSelector }                   from 'react-redux';
+import { addUser, removeUser }                        from '../utilit/userSlice';
 
 const Header = () => {
 
-  // Hooks
+// Hooks
   const user     = useSelector(store => store.user) ;
   const navigate = useNavigate() ;
   const dispatch = useDispatch() ;
 
-  // functions
+// functions
   const handleSignOut = () => {
     const auth = getAuth();
     signOut(auth)

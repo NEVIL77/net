@@ -24,10 +24,10 @@ const Login = () => {
     const message = Validation(email.current.value, password.current.value )
     setErrorMessage(message)
 
-    // if error
+// if error
     if(errorMessage != null) return ;
 
-    // not an error
+  // not an error
     if(!isSignInForm){ // Sign Up
       createUserWithEmailAndPassword(auth, email.current.value, password.current.value,name.current.value)
         .then((userCredential) => {
