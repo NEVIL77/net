@@ -63,3 +63,17 @@ redux is Storing
 
 ### Inteigrating ChatGPT
 ### Making Responsive App
+
+
+Buidling GPT search page 
+        task- when i click on the padge then show me the component otherwise dont show  toggle functionallity
+
+task to complite 
+        gpt component
+        create gpt slice 
+        toggle functionallity
+
+
+problem  : i am not able to click on the button 
+causes   : my header is overlaped with other 
+solution : i have to apply z index on header component 
