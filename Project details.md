@@ -89,6 +89,9 @@ Problem :- how can i feature multiple lang in app
 
 
 
+### UnderStanding the Memoization of data in our apps
+        if our redux store already have the data then dont need to fetch the data again in useEffect
+
 
 Buidling GPT search page 
         task- when i click on the padge then show me the component otherwise dont show  toggle functionallity
