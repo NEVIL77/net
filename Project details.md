@@ -61,7 +61,25 @@ redux is Storing
 ### made dynamic component name as SecondaryContainer, MovieList, MovieCard to render the movie in row 
 ### adjest this row as netflix have in there UI 
 
-### Inteigrating ChatGPT
+### created Gpt button
+### created gpt searchbar component 
+### gpt component have multiple laungauge option
+
+Problem :- how can i feature multiple lang in app
+1. made lang Constant files
+2. Suppoered Language Array
+3. used this array to render the option for Select
+4. made configSlice to store the selected value 
+5. base on value in the store i show langauge on search sections
+
+#### Inteigrating ChatGPT
+
+### openAI api genration
+### installing api library name npm openai it give you helper function which 
+### authorize the openAI api things
+### fetch the data using openAI helper function 
+### done with GPTSearchBar => fetch the data => pass the data to tmdb func => store the data to redux store   
+
 ### Making Responsive App
 
 
@@ -77,3 +95,16 @@ task to complite
 problem  : i am not able to click on the button 
 causes   : my header is overlaped with other 
 solution : i have to apply z index on header component 
+
+openAI key org-kxacl9v7CiYDttrmlzYpW0lW
+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
+
+
+how to use openai api
+1.install npm => npm install --save openai
+2.to autherize create new file name openai.js and 
+export const openai = new OpenAI({
+  apiKey: OPENAI_API_KEY ,
+  dangerouslyAllowBrowser: true 
+}); 
+3.with helper function ,this helper function give the data which we want and we can extract the data from it and render on UI
