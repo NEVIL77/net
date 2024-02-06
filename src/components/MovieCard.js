@@ -2,6 +2,7 @@ import React from 'react'
 import { IMG_CDN } from '../utilit/constants'
 
 const MovieCard = ( { poster } ) => {
+    if( !poster ) return null
     return (
         <div className='w-48 pr-4'>
             <img  className='hover:border-white' src={IMG_CDN+ poster} alt='photos'/>

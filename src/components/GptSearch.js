@@ -6,14 +6,19 @@ import GptMovieSuggestions from './GptMovieSuggestions'
 const GptSearch = () => {
     
   return (
-    <div className='flex justify-center pt-20 '>
-        <img 
-          src={NetBackGround} alt=''
-          className='w-screen h-screen '/>
+    <div className='flex justify-center  '>
+        <div className='fixed -z-10'>
+          <img 
+            src={NetBackGround} alt=''
+            className=' h-screen flex-grow w-screen object-cover '
+          />
+        </div>
+        <div className='flex justify-center' >
 
-        <GPTSearchBar/>
-        {/* <GptMovieSuggestions/> */}
+          <GPTSearchBar/>
+          <GptMovieSuggestions/>
         
+        </div>
     </div>
   )
 }

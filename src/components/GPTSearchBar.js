@@ -48,14 +48,20 @@ const GPTSearchBar = () => {
 
     console.log(tmdbResults) ;
 
-    dispatch(
-      addGptMovieResults ({ movieResult :tmdbResults ,
-                            movieName   :moviesSuggested  })
-    )
+    if(!searchText.current.value){
+      dispatch(addGptMovieResults ({ movieResult :"", movieName   :""  }))
+    }
+    else{
+
+      dispatch(
+        addGptMovieResults ({ movieResult :tmdbResults , movieName   :moviesSuggested  })
+      )
+    }
+
 
   } 
   return (
-    <div className='absolute'>
+    <div className='absolute pt-20 z-40'>
       <form onSubmit={ (e)=> e.preventDefault() }>
         
         <input 

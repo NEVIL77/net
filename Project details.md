@@ -80,7 +80,14 @@ Problem :- how can i feature multiple lang in app
 ### fetch the data using openAI helper function 
 ### done with GPTSearchBar => fetch the data => pass the data to tmdb func => store the data to redux store   
 
-### Making Responsive App
+### i have data at redux store for perticular type of movie like funny indian movie 
+### create GPTMovieSuggestions which help to render the poster acording to redux data movie 
+        used reusable component MovieList where i pass the data (props) like movieName and movieResult 
+        i used movieName for Looping 
+### fix the bug like if search bar is empty then dont show any thing 
+        how -> useRed varible is empty then store the empty in redux -> empty thing will not render
+
+
 
 
 Buidling GPT search page 
